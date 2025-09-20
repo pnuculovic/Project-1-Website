@@ -1,0 +1,59 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  color: white;
+  background: #0b0c10;
+}
+
+nav {
+  display: flex;
+  gap: 10px;
+  padding: 15px;
+  background: #12141a;
+}
+nav a.button {
+  text-decoration: none;
+  padding: 10px 14px;
+  border-radius: 8px;
+  font-weight: bold;
+  background: #6ea8fe;
+  color: #fff;
+  transition: transform 0.2s, background 0.2s;
+}
+nav a.button:hover {
+  background: #3b82f6;
+  transform: translateY(-2px);
+}
+
+.flow-bg {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  background: radial-gradient(60% 90% at 10% 10%, #6ea8fe22, transparent 60%),
+              radial-gradient(70% 80% at 90% 20%, #a78bfa22, transparent 60%),
+              radial-gradient(70% 80% at 50% 90%, #34d39922, transparent 60%),
+              conic-gradient(from 0deg at 50% 50%, #6ea8fe11, #a78bfa11, #34d39911, #6ea8fe11);
+  filter: blur(24px) saturate(120%);
+  animation: flow 18s linear infinite;
+}
+@keyframes flow {
+  0%   { transform: translate3d(0,0,0) scale(1); }
+  50%  { transform: translate3d(0,-2%,0) scale(1.02); }
+  100% { transform: translate3d(0,0,0) scale(1); }
+}
+
+.reveal {
+  opacity: 0;
+  transform: translateY(12px) scale(0.98);
+  animation: pop 600ms ease-out forwards;
+  animation-play-state: paused;
+}
+.reveal.delay-1 { animation-delay: 120ms; }
+.reveal.delay-2 { animation-delay: 240ms; }
+@keyframes pop {
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}

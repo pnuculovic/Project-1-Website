@@ -1,26 +1,58 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <title>Peter Nuculovic</title>
-        <link rel="stylesheet" href="styles.css">
-    </head>
-    <body>
-        <header>
-            <nav>
-                <button class="resume-page">Peter Nuculovic</button>
-                <button class="project2-page">Project 2</button>
-                <button class="project3-page">Project 3</button>
-            </nav>
-        </header>
-        <main>
-            <section style="display: flex;"></section>
-            <div style="flex: 2; padding: 10px"></div>
-            <h2>Peter Nuculovic</h2>
-            <p>586-488-7687 | pnuculovic@oakland.edu | LinkedIn | Website</p>
-            <p>School of Engineering and Computer Science<br>Oakland University<br>Rochester, MI</p>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Peter Nuculovic</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="flow-bg"></div>
 
-            <h3>CAREER FOCUS: Software Engineer / Back-end Developer</h3>
-            <p>Aspiring back-end developer with storng skills in Java and Python.</p>
-        </main>
-    </body>
+  <header class="reveal">
+    <nav>
+      <a class="button" href="index.html">Peter Nuculovic</a>
+      <a class="button" href="project2.html">Project 2</a>
+      <a class="button" href="project3.html">Project 3</a>
+    </nav>
+  </header>
+
+  <main class="reveal delay-1">
+    <section style="display:flex;">
+      <div style="flex:2; padding:10px;">
+        <h2>Peter Nuculovic</h2>
+        <p>586-488-7687 | pnuculovic@oakland.edu | LinkedIn | Website</p>
+        <p>
+          School of Engineering and Computer Science<br>
+          Oakland University<br>
+          Rochester, MI
+        </p>
+
+        <h3>CAREER FOCUS: Software Engineer / Back-end Developer</h3>
+        <p>
+          Aspiring back-end developer with strong skills in Java and Python.
+          Currently exploring Spring Boot and modern frameworks.
+        </p>
+
+        <h3>Education</h3>
+        <p>
+          Bachelor of Science in Computer Science<br>
+          Oakland University, Rochester MI<br>
+          Expected Graduation: May 2027
+        </p>
+      </div>
+
+      <div style="flex:1; padding:10px;" class="reveal delay-2">
+        <img src="man.jpg" alt="Peter Nuculovic headshot" width="220">
+      </div>
+    </section>
+  </main>
+
+  <script>
+    addEventListener('DOMContentLoaded', () => {
+      document.querySelectorAll('.reveal').forEach(el=>{
+        el.style.animationPlayState = 'running';
+      });
+    });
+  </script>
+</body>
 </html>
