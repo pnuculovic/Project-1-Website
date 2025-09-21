@@ -8,46 +8,105 @@
 <body>
   <div class="flow-bg"></div>
 
-  <header class="reveal">
-    <nav>
+  <div class="welcome">
+    <div class="welcome-inner" id="welcomeWrap">
+      <span id="welcomeText" class="type"></span>
+    </div>
+  </div>
+
+  <header class="reveal delay-1">
+    <nav class="bar">
       <a class="button" href="index.html">Peter Nuculovic</a>
       <a class="button" href="project2.html">Project 2</a>
       <a class="button" href="project3.html">Project 3</a>
     </nav>
   </header>
 
-  <main class="reveal delay-1">
-    <section style="display:flex;">
+  <main class="reveal delay-2">
+    <section style="display:flex;max-width:1000px;margin:0 auto;padding:16px;">
       <div style="flex:2; padding:10px;">
-        <h2>Peter Nuculovic</h2>
-        <p>586-488-7687 | pnuculovic@oakland.edu | LinkedIn | Website</p>
+
+        <div class="profile">
+          <h2>Peter Nuculovic</h2>
+          <p>
+            586-488-7687 · <a href="mailto:pnuculovic@oakland.edu">pnuculovic@oakland.edu</a> ·
+            <a href="https://www.linkedin.com/in/peter-nuculovic-a653a7385/" target="_blank" rel="noopener">LinkedIn</a> ·
+            <a href="#" target="_blank" rel="noopener">GitHub</a>
+          </p>
+        </div>
+
         <p>
           School of Engineering and Computer Science<br>
-          Oakland University<br>
-          Rochester, MI
+          Oakland University, Rochester, MI
         </p>
 
-        <h3>CAREER FOCUS: Software Engineer / Back-end Developer</h3>
+        <h3>Career Focus</h3>
         <p>
-          Aspiring back-end developer with strong skills in Java and Python.
-          Currently exploring Spring Boot and modern frameworks.
+          Aspiring backend/software engineer with strong skills in Java and Python; currently learning Spring Boot.
+          Interested in building reliable APIs and services with clean, well-documented code.
         </p>
 
         <h3>Education</h3>
         <p>
-          Bachelor of Science in Computer Science<br>
-          Oakland University, Rochester MI<br>
+          <strong>Oakland University</strong> — B.S. in Computer Science<br>
           Expected Graduation: May 2027
         </p>
+
+        <h3>Experience</h3>
+        <p><strong>Customer Service Representative — Kroger</strong> (2023–Present)</p>
+        <ul>
+          <li>Provided excellent customer support, resolving issues quickly and effectively.</li>
+          <li>Communicated with customers in a friendly, professional manner to build satisfaction and loyalty.</li>
+          <li>Worked collaboratively with team members in a fast-paced environment.</li>
+        </ul>
+
+        <h3>Projects (see Project 2 & 3 pages for details)</h3>
+        <p><strong>SimpleMetricConverter (Java/JavaFX)</strong></p>
+        <ul>
+          <li>Converts units (kg↔lb, g↔oz, km↔mile, mm↔inch); clean CLI/GUI output.</li>
+        </ul>
+        <p><strong>Tic Tac Toe (Python, sockets, SQLite)</strong></p>
+        <ul>
+          <li>Client-server app with login, encrypted credentials, and leaderboard.</li>
+        </ul>
+        <p><strong>PrioritizedNetworkTraffic (Java, DSA)</strong></p>
+        <ul>
+          <li>Priority queue that dequeues higher-priority packets first; output matches spec.</li>
+        </ul>
+
+        <h3>Technical Skills</h3>
+        <ul>
+          <li><strong>Languages:</strong> Java, Python, SQL, HTML, CSS</li>
+          <li><strong>Frameworks/Tools:</strong> Spring Boot (learning), Git, VS Code</li>
+        </ul>
       </div>
 
-      <div style="flex:1; padding:10px;" class="reveal delay-2">
+      <div style="flex:1; padding:10px;" class="reveal delay-3">
         <img src="man.jpg" alt="Peter Nuculovic headshot" width="220">
       </div>
     </section>
   </main>
 
   <script>
+    const text = "Hello, welcome to my page";
+    const el = document.getElementById("welcomeText");
+    const wrap = document.getElementById("welcomeWrap");
+
+    let i = 0;
+    const speed = 100;
+
+    function type() {
+      if (i <= text.length) {
+        el.textContent = text.slice(0, i);
+        i++;
+        setTimeout(type, speed);
+      } else {
+        wrap.classList.add("welcome-active");
+      }
+    }
+
+    document.addEventListener("DOMContentLoaded", type);
+
     addEventListener('DOMContentLoaded', () => {
       document.querySelectorAll('.reveal').forEach(el=>{
         el.style.animationPlayState = 'running';
